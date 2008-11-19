@@ -154,10 +154,10 @@ def _update_subtitle(sender, instance, signal, **kwargs):
         we are going to update it with the newest information.
 
         """
-        track_count = instance.track_set.count() + 1 # we cheat on this, it's a pre-save signal and the count is one less than we want.
+        track_count = instance.track_set.count()
         track_string = "track%s" % pluralize(track_count, 's')
         instance.subtitle = DEFAULT_SUBTITLE_FSTRING % {'track_count':track_count, 'track_string':track_string, 'duration_string':instance.duration_string,}
 
 #models.signals.pre_save.connect(_increment_tape_duration, sender=Track)
 models.signals.pre_delete.connect(_decrement_tape_duration, sender=Track)
-models.signals.pre_save.connect(_update_subtitle, sender=Tape)
+models.signals.post_save.connect(_update_subtitle, sender=Tape)

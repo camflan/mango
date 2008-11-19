@@ -19,7 +19,6 @@ function playerReady(obj)
 
 $(document).ready(function(){ 
     setup_song_events();
-    $('.banner').css('background', '{{ tape.banner_color }}');
 });
 
 function updatePlayerState(obj)
