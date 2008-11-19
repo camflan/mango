@@ -160,4 +160,4 @@ def _update_subtitle(sender, instance, signal, **kwargs):
 
 #models.signals.pre_save.connect(_increment_tape_duration, sender=Track)
 models.signals.pre_delete.connect(_decrement_tape_duration, sender=Track)
-models.signals.post_save.connect(_update_subtitle, sender=Tape)
+models.signals.pre_save.connect(_update_subtitle, sender=Tape)
