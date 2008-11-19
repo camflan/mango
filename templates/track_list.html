@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+{{ tape.title }}
+{% endblock %}
+
 {% block banner_flag %}
     <h1>{{ tape.title }}</h1>
     <h2>{{ tape.subtitle }}</h2>
