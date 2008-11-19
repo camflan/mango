@@ -15,7 +15,7 @@ def track_list(request, tape_slug=None, xspf=False, template_name="mango/track_l
     context = {'tape':tape, 'tracks':tracks, 'site':site,}
 
     if xspf:
-        t = loader.get_template('xspf.txt')
+        t = loader.get_template('mango/xspf.txt')
         content = t.render(Context(context))
         return HttpResponse(content, mimetype="application/xspf+xml")
 
