@@ -18,11 +18,9 @@ TIME_SEPARATOR = getattr(settings,
 TAPE_ROOT = getattr(settings,
                         'MANGO_TAPE_STORAGE_ROOT',
                         settings.MEDIA_ROOT)
-        )
 TAPE_URL = getattr(settings,
                         'MANGO_TAPE_URL_ROOT',
                         settings.MEDIA_URL)
-        )
 
 fs = FileSystemStorage(location=TAPE_ROOT)
 
