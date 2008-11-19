@@ -12,13 +12,19 @@ DEFAULT_SUBTITLE_FSTRING = getattr(settings,
                                     'MANGO_DEFAULT_SUBTITLE_FSTRING', 
                                     "%(track_count)s %(track_string)s. %(duration_string)s")
 TIME_SEPARATOR = getattr(settings, 
-                                    'MANGO_TIME_SEPARATOR', 
-                                    ':')
-TAPE_DIRECTORY = getattr(settings,
-                                    'MANGO_TAPE_STORAGE_ROOT',
-                                    settings.MEDIA_URL)
+                            'MANGO_TIME_SEPARATOR', 
+                            ':')
 
-fs = FileSystemStorage(location=settings.MEDIA_URL + TAPE_DIRECTORY)
+TAPE_ROOT = getattr(settings,
+                        'MANGO_TAPE_STORAGE_ROOT',
+                        settings.MEDIA_ROOT)
+        )
+TAPE_URL = getattr(settings,
+                        'MANGO_TAPE_URL_ROOT',
+                        settings.MEDIA_URL)
+        )
+
+fs = FileSystemStorage(location=TAPE_ROOT)
 
 def build_upload_path(instance, filename):
     import os.path
@@ -82,7 +88,7 @@ class Tape(MangoBase):
 
     @property
     def path(self):
-        return '%s/%s' % (settings.MEDIA_ROOT + TAPE_DIRECTORY, self.slug)
+        return '%s/%s' % (TAPE_ROOT, self.slug)
 
     def force_recalculate_duration(self):
         """
@@ -126,7 +132,7 @@ class Track(MangoBase):
         return u'%s - %s' % (self.artist, self.title)
 
     def get_absolute_url(self):
-        return '%s%s/%s' % (settings.MEDIA_URL + TAPE_DIRECTORY, self.tape.slug, os.path.basename(self.file.name))
+        return '%s%s/%s' % (TAPE_URL, self.tape.slug, os.path.basename(self.file.name))
 
 def _increment_tape_duration(sender, instance, **kwargs):
     if not instance.id:
