@@ -1,0 +1,6 @@
+This is a reusable app to build mixtapes for django. 
+I wrote this app in 5 hours, and now that it works I will be working to make it as portable as possible. After it's a "reusable app", I will be adding lots of new features. I plan to have it production ready later tonight or tomorrow.
+
+Known issues:
+- clicking on anything other than the tape name will not take you to the tape.
+- clicking on the track name will play the first track, not the one you clicked on.
