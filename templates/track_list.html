@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block banner_flag %}
+    <h1>{{ tape.title }}</h1>
+    <h2>{{ tape.subtitle }}</h2>
+{% endblock %}
+
+{% block content %}
+<ul>
+{% for track in tracks %}
+<li id="{{ forloop.counter0 }}" class="song">
+<div class="name">
+   {{ track.artist }} - {{ track.title }}
+</div>&nbsp;
+<div class="info">
+    <div class="clock"></div>
+    <strong>{{ track.duration_pretty }}</strong>
+</div>
+</li>
+{% endfor %}
+    
+</ul>
+{% endblock %}
+
+{% block footer %}
+    <a class="back" href="{% url tape-list %}">&#171; mixtape list</a>
+    {{ block.super }}
+{% endblock %}

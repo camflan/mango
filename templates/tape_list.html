@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block banner_flag %}
+    <h1>mixtapes</h1>
+    <h2>{{ tapes.count }} mixtape{{ tapes.count|pluralize }}</h2>
+{% endblock %}
+
+{% block content %}
+<ul class="songs">
+    {% for tape in tapes %}
+    <li class="song">
+    <div class="name">
+        <a href="{{ tape.get_absolute_url }}">{{ tape.title }} - {{ tape.subtitle }}</a>
+    </div>&nbsp;
+    <div class="info">
+        <strong>{{ tape.total_play_time }}</strong>
+    </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

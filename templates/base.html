@@ -1,0 +1,56 @@
+<html>
+    <head>
+    <title>testing this.</title>
+
+	<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/style.css">
+    <script src="{{ MEDIA_URL }}/jquery.js"></script>
+    <script src="{{ MEDIA_URL }}/swfobject.js"></script>
+
+    {% comment %}
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("jquery", "1.2.6")
+        google.load("swfobject", "2.1")
+    </script>
+    {% endcomment %}
+    <script type="text/javascript">
+        if(!navigator.userAgent.match(/iPhone|iPod/i)) {			
+            var flashvars = {
+                type: "xml",
+                shuffle: "false",
+                repeat: "list",
+                file: '{{ tape.get_absolute_xspf_url }}'		
+            }
+            var params = {
+                allowscriptaccess: "always"
+            }
+            var attributes = {
+            id: "openplayer",
+            name: "openplayer",
+            styleclass: "flash_player"
+            }
+            swfobject.embedSWF('{{ MEDIA_URL }}/mediaplayer.swf', "openplayer", "0", "0", "8.0.0", false, flashvars, params, attributes);
+        }
+    </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="banner">
+                <div class="flag">
+                    {% block banner_flag %}
+                    {% endblock %}
+                </div>
+            </div>
+            {% block content %}
+            {% endblock %}
+            <div id="footer">
+                {% block footer %}
+                <a class="info" href="http://im.camronflanders.com/mango/">mango .3</a>
+                {% endblock %}
+            </div>
+            {{ site }}
+            <div id="openplayer" class="flash_player"></div>
+        </div>
+        <script src="{{ MEDIA_URL }}/mango.js" type="text/javascript"> </script>
+    </body>
+</html>

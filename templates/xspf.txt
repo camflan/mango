@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="0">
+    <title>{{ tape.title }}</title>
+    <annotation></annotation>
+    <creator>Mango</creator>
+    <info>{{ site.domain_name }}</info>
+    <location>{{ tape.get_absolute_xspf_url }}</location>
+    <tracklist>
+        {% for track in tracks %}
+        <track>
+            <location>{{ track.get_absolute_url }}</location>
+            <creator>{{ track.artist }}</creator>
+            <title>{{ track.title }}</title>
+            <duration>{{ track.duration }}</duration>
+        </track>
+        {% endfor %}
+    </tracklist>
+</playlist>

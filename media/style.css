@@ -1,0 +1,202 @@
+/* @override http://localhost:8000/media/style.css */
+
+/* @group Reset */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.125em;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+
+table, td, th {
+	vertical-align: middle;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: "";
+}
+
+blockquote, q {
+	quotes: "" "";
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover, a:active {
+	
+}
+
+a img {
+	border: none;
+}
+
+h1 {
+	font-size: 300%;
+}
+
+h2 {
+	font-size: 200%;
+}
+
+h3 {
+	font-size: 150%;
+}
+
+h4 {
+	font-size: 125%;
+}
+
+strong {
+	font-weight: bolder;
+}
+
+em {
+	font-style: italic;
+}
+
+p {
+	font-family: "Helvetica Neue", "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 13px;
+}
+
+/* @end */
+
+#footer {
+    margin-top:10px;
+	color: #555;
+	position: relative;
+	font-size: 80%;
+}
+
+#footer a, #footer a:visited {
+	color: #555;
+}
+
+#footer a:hover, #footer a:active {
+	color: #000;
+}
+
+#footer .back {
+	position: absolute;
+	left: 20px;
+}
+
+#footer .info {
+	position: absolute;
+	right: 20px;
+}
+
+
+.banner {
+	background: #222;
+	font-size: 50%;
+}
+
+body {
+	color: #111;
+	background: #fff;
+	font-family: Helvetica, "Lucida Grande", "Trebuchet MS", sans-serif;
+}
+
+.banner {
+	color: #fff;
+	height: 60px;
+	left: 0;
+	padding: 0 20px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 5;
+}
+
+.banner h1 {
+	margin-top: 10px;
+	font-size: 200%;
+	font-weight:700;
+}
+
+.banner h2 {
+	font-size: 150%;
+	font-weight:400;
+}
+
+.banner a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+ul {
+	margin-top: 60px;
+}
+
+li {
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+	padding: 20px;
+	position: relative;
+}
+
+li .clock {
+	display: inline;
+}
+
+li .info {
+	font-size: 14px;
+	position: absolute;
+	 right: 20px;
+	top: 20px;
+}
+
+li .info .clock {
+	font-weight: 700;
+	margin: 0 5px;
+}
+
+li .info strong {
+	color: #555;
+	font-weight: 400;
+	 float: right;
+}
+
+li .mp3 {
+	font-size: 14px;
+	line-height: 25px;
+	margin: 0 10px;
+	vertical-align: top;
+}
+
+li .name {
+	float: left;
+	font-size: 20px;
+}
+
+li:hover {
+	background: #eee;
+}
