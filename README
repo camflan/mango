@@ -1,19 +1,24 @@
-This is a reusable app to build mixtapes for django. 
-I wrote this app in 5 hours, and now that it works I will be working to make it as portable as possible. After
-it's a "reusable app", I will be adding lots of new features. I plan to have it production ready later tonight or tomorrow.
+This is a reusable app to build mixtapes for django.  I wrote this app in 5
+hours, and now that it works I will be working to make it as portable as
+possible. After it's a "reusable app", I will be adding lots of new features. I
+plan to have it production ready later tonight or tomorrow.
 
 Features coming soon:
 - ajax reordering of tracks
 - banner color picker widget
 - batch upload, with pretty progress bars
-- ability to upload larger files over slow connections (goes along with batch upload)
+- ability to upload larger files over slow connections (goes along with batch
+        upload)
 - user permissions for creating/editing/deleting tapes/tracks
 
 Gotchas:
-- mediaplayer.swf and mango.js must reside on the same domain as your templates for cross-domain security reasons.
-You can get the .swf to work from another domain using a properly configured crossdomain.xml, but the .js must
- come from the same domain and it's much easier to keep the .js and .swf together.
+- mediaplayer.swf and mango.js must reside on the same domain as your templates
+for cross-domain security reasons.  You can get the .swf to work from another
+domain using a properly configured crossdomain.xml, but the .js must come from
+the same domain and it's much easier to keep the .js and .swf together.
 
 Known issues:
 - clicking on anything other than the tape name will not take you to the tape.
-- clicking on the track name will play the first track, not the one you clicked on.
+- clicking on the track name will play the first track, not the one you clicked
+on.
+
