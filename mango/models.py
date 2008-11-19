@@ -126,7 +126,7 @@ class Track(MangoBase):
         return u'%s - %s' % (self.artist, self.title)
 
     def get_absolute_url(self):
-        return '/songs/%s/%s' % (self.tape.slug, os.path.basename(self.file.name))
+        return '%s/%s/%s' % (TAPE_DIRECTORY, self.tape.slug, os.path.basename(self.file.name))
 
 def _increment_tape_duration(sender, instance, **kwargs):
     if not instance.id:
