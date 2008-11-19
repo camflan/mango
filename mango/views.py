@@ -6,7 +6,7 @@ from django.contrib.sites.models import Site
 
 from mango.models import Tape, Track
 
-def track_list(request, tape_slug=None, xspf=False, template_name="track_list.html"):
+def track_list(request, tape_slug=None, xspf=False, template_name="mango/track_list.html"):
     site = Site.objects.get_current()
 
     tape = get_object_or_404(Tape, slug=tape_slug)
@@ -21,6 +21,6 @@ def track_list(request, tape_slug=None, xspf=False, template_name="track_list.ht
 
     return render_to_response(template_name, context , context_instance=RequestContext(request))
 
-def tape_list(request, template_name="tape_list.html"):
+def tape_list(request, template_name="mango/tape_list.html"):
     site = Site.objects.get_current()
     return render_to_response(template_name, {'tapes':Tape.objects.all(), 'site':site}, context_instance=RequestContext(request))
