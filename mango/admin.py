@@ -1,4 +1,4 @@
-from tango.models import *
+from mango.models import *
 from django.contrib import admin
 
 class TapeAdmin(admin.ModelAdmin):

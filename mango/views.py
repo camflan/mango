@@ -4,7 +4,7 @@ from django.http import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.sites.models import Site
 
-from tango.models import *
+from mango.models import Tape, Track
 
 def track_list(request, tape_slug=None, xspf=False, template_name="track_list.html"):
     site = Site.objects.get_current()
